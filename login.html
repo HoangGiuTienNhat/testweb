@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Đăng nhập</h1>
+    <button onclick="location.href='index.html'">Quay lại trang chủ</button>
+  </header>
+  <main class="auth-form">
+    <form id="login-form">
+      <label for="login-username">Tên đăng nhập hoặc Email:</label>
+      <input type="text" id="login-username" required>
+      
+      <label for="login-password">Mật khẩu:</label>
+      <input type="password" id="login-password" required>
+      
+      <button type="submit">Đăng nhập</button>
+      <button type="button" onclick="location.href='register.html'">Đăng ký</button>
+      <button type="button" onclick="location.href='forgot-password.html'">Quên mật khẩu?</button>
+    </form>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

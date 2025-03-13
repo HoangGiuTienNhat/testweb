@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="detail-header">
+    <div class="shrink-nav">
+      <button onclick="location.href='index.html'">Trang chủ</button>
+      <button onclick="location.href='account.html'">Tài khoản của tôi</button>
+      <button onclick="logout()">Đăng xuất</button>
+    </div>
+  </header>
+  
+  <!-- Detail Banner: Ảnh sản phẩm được phóng to và hiển thị ngang -->
+  <div id="detail-banner">
+    <img id="detail-image" src="" alt="Hình ảnh sản phẩm" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Default+Cat'">
+  </div>
+  
+  <!-- Product Information -->
+  <div id="detail-content">
+    <h2 id="detail-title"></h2>
+    <p id="detail-price"></p>
+    <p id="detail-description"></p>
+    <button onclick="editDescription()">Chỉnh sửa mô tả</button>
+    <div class="reviews">
+      <h3>Đánh giá sản phẩm</h3>
+      <div class="rating-input">
+        <label><input type="radio" name="rating" value="1"> 1 sao</label>
+        <label><input type="radio" name="rating" value="2"> 2 sao</label>
+        <label><input type="radio" name="rating" value="3"> 3 sao</label>
+        <label><input type="radio" name="rating" value="4"> 4 sao</label>
+        <label><input type="radio" name="rating" value="5"> 5 sao</label>
+      </div>
+      <textarea id="review-comment" placeholder="Bình luận"></textarea>
+      <button onclick="submitReview()">Gửi đánh giá</button>
+      <div id="reviews-list"></div>
+    </div>
+  </div>
+  
+  <!-- Suggestions: Gợi ý các sản phẩm liên quan -->
+  <section id="suggestions">
+    <h3>Có thể bạn thích</h3>
+    <div class="suggestion-container">
+      <!-- Sản phẩm gợi ý sẽ được render bởi product.js -->
+    </div>
+  </section>
+  
+  <script src="js/auth.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

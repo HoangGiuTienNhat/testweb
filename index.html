@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang Web Bán Hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Cửa Hàng Online</h1>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Tìm kiếm sản phẩm...">
+      <button id="btn-search" onclick="searchProducts()">Tìm kiếm</button>
+      <select id="sort-filter" onchange="sortProducts()">
+        <option value="">Sắp xếp theo</option>
+        <option value="price-asc">Giá: Thấp đến cao</option>
+        <option value="price-desc">Giá: Cao đến thấp</option>
+      </select>
+    </div>
+    <nav class="account-nav">
+      <button id="btn-login" onclick="location.href='login.html'">Đăng nhập</button>
+      <button id="btn-register" onclick="location.href='register.html'">Đăng ký</button>
+      <button id="btn-account" style="display:none;" onclick="location.href='account.html'">Tài khoản của tôi</button>
+      <button id="btn-logout" style="display:none;" onclick="logout()">Đăng xuất</button>
+      <button id="btn-wishlist" onclick="location.href='wishlist.html'">Wishlist</button>
+    </nav>
+    <button id="btn-cart" onclick="toggleCartPanel()">Giỏ hàng</button>
+  </header>
+  
+  <!-- Spinner loading -->
+  <div id="loading-spinner" class="spinner"></div>
+  
+  <div class="container">
+    <section class="product-display">
+      <!-- Các sản phẩm sẽ được phân trang và render bởi script.js -->
+    </section>
+  </div>
+  
+  <!-- Pagination controls -->
+  <div id="pagination" class="pagination"></div>
+  
+  <!-- Cart Panel: hiển thị ở góc dưới bên phải -->
+  <div id="cart-panel">
+    <div class="cart-header">
+      <span>Giỏ hàng</span>
+      <button onclick="toggleCartPanel()">Đóng</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <div class="cart-total">
+      Tổng tiền: <span id="total-price">0</span> VND
+    </div>
+    <button id="checkout-btn" onclick="checkout()">Thanh toán</button>
+  </div>
+  
+  <!-- Back to Top button -->
+  <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+  
+  <!-- Vertical Ads: sử dụng thẻ video MP4 cho quảng cáo dạng dọc -->
+  <div class="vertical-ad left-ad">
+    <video id="ad-left-video" autoplay muted loop playsinline>
+      <source src="videos/vd5.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+  <div class="vertical-ad right-ad">
+    <video id="ad-right-video" autoplay muted loop playsinline>
+      <source src="videos/vd5.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+  
+  <!-- Đoạn code quảng cáo: để thay đổi quảng cáo, chỉnh sửa thuộc tính src của thẻ <source> trong các thẻ video -->
+  
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

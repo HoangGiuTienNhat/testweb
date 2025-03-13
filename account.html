@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tài khoản của tôi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Tài khoản của tôi</h1>
+    <nav class="account-nav">
+      <button onclick="logout()">Đăng xuất</button>
+      <button onclick="location.href='index.html'">Trang chủ</button>
+    </nav>
+  </header>
+  <main class="account-info">
+    <p id="user-info"></p>
+  </main>
+  <script src="js/auth.js"></script>
+  <script>
+    window.onload = function() {
+      const currentUser = localStorage.getItem("currentUser");
+      if(currentUser) {
+        document.getElementById("user-info").textContent = "Chào mừng, " + currentUser;
+      } else {
+        document.getElementById("user-info").textContent = "Bạn chưa đăng nhập.";
+      }
+    };
+  </script>
+</body>
+</html>
