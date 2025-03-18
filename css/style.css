@@ -68,7 +68,8 @@ nav.account-nav button:hover {
   padding: 12px 16px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 2000;
+  z-index: 20;
+  animation: shake 0.5s ease-in-out infinite;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
@@ -118,6 +119,7 @@ nav.account-nav button:hover {
   animation: fadeIn 0.5s ease forwards;
   transform: scale(1.3);
   transition: transform 0.3s;
+  
 }
 .product-card img {
   width: 100%;
@@ -126,10 +128,12 @@ nav.account-nav button:hover {
   transition: transform 0.3s;
   position: relative;
   z-index: 1;
+  animation: borderAnimation 3s linear infinite;
+  
 }
 .product-card img:hover {
   transform: scale(2);
-  z-index: 9999;
+  z-index: 21;
 }
 .product-card h3 {
   font-size: 18px;
@@ -168,7 +172,7 @@ nav.account-nav button:hover {
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 1500;
+  z-index: 15;
 }
 #cart-panel .cart-header {
   display: flex;
@@ -217,7 +221,7 @@ nav.account-nav button:hover {
   border-radius: 50%;
   cursor: pointer;
   display: none;
-  z-index: 2000;
+  z-index: 22;
   transition: opacity 0.3s;
 }
 #back-to-top:hover {
@@ -273,7 +277,7 @@ nav.account-nav button:hover {
   color: #fff;
   padding: 10px;
   text-align: center;
-  z-index: 1500;
+  z-index: 16;
   transition: all 0.5s ease;
 }
 #detail-header.shrink {
@@ -314,7 +318,7 @@ nav.account-nav button:hover {
 /* Khi hover vào toàn bộ product card, tăng z-index để nó luôn nằm trên cùng */
 .product-card:hover {
   position: relative;
-  z-index: 9999;
+  z-index: 29;
 }
 .product-card img:hover {
   transform: scale(2);
@@ -384,20 +388,166 @@ nav.account-nav button:hover {
   top: 100px;
   width: 250px;
   height: 420px;
-  z-index: 2100;
+  z-index: 31;
   background-color: #000;
 }
 .left-ad {
   left: 10px;
+  display: none;
 }
 .right-ad {
   right: 10px;
+  visibility: hidden;
 }
 .vertical-ad video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.dinhvituyetdoi{
+  position: absolute;      /* Định vị tuyệt đối */
+  top: 300px;               /* Cách phía trên 50px */
+  left: 50px;             /* Cách bên trái 100px */
+  width: 50px;            /* Chiều rộng */
+  height: 10px;           /* Chiều cao */
+  background-color: #eeceb8; /* Màu nền */
+  color: #2c0fd0;             /* Màu chữ */
+  padding: 20px;           /* Khoảng cách bên trong */
+  margin: 1px;        
+      /* Khoảng cách bên ngoài */
+  border: 3px solid #d65809; /* Viền */
+  border-radius: 15px;     /* Bo tròn góc */
+  text-align: center;      /* Canh giữa nội dung */
+  line-height: 1px;      /* Căn giữa theo chiều cao */
+  text-emphasis-color: #27ae60;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Hiệu ứng đổ bóng */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 30;
+  display: none;
+}
+.tunhien2{
+  position: relative;
+  top: 2px;    /* Di chuyển xuống dưới 20px so với vị trí ban đầu */
+  left: 0px;   /* Di chuyển sang phải 30px so với vị trí ban đầu */
+  background-color: #df2222;
+  color: #801ead;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: none;
+  /* visibility: hidden; */
+}
+.tunhien {
+  position: relative;
+  top: 2px;    /* Di chuyển xuống dưới 20px so với vị trí ban đầu */
+  left: 100px;   /* Di chuyển sang phải 30px so với vị trí ban đầu */
+  background-color: #df2222;
+  color: #801ead;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  /* visibility: hidden; */
+  display: none;
+}
+.fix{
+   
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    height: fit-content;
+    width: fit-content;
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px;
+    z-index: 34;
+    visibility: hidden;
+  
+}
+/* .btn-with-logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: #3498db;
+  background-size: cover;
+  color: #fff;
+  
+  border: #8e174b;
+  border-radius: 18px;
+  cursor: pointer;                /* Hiển thị con trỏ tay khi hover 
+  transition: background-color 0.3s;
+}
+
+.btn-with-logo:hover {
+  background-color: #17b39e;
+}
+
+.btn-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+} */
+
+
+
+/* .custom-btn {
+  position: absolute;
+  top: 820px;
+  left: 10px;
+  width: 30px;         
+  height: 30px;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  }
+
+.custom-btn img {
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100% ;           
+  height: 100%;          
+  object-fit: cover;      
+  display: block;
+  border-radius: 20%;
+} */
+
+
+/* Container chứa các button, sử dụng flex để sắp xếp theo hàng */
+.button-container {
+  position: absolute;      /* Định vị container tại vị trí mong muốn trên trang */
+  top: 860px;
+  left: 40px;
+  display: flex;
+  gap: 15px;               /* Khoảng cách giữa các button */
+}
+
+/* Định dạng cho button */
+.custom-btn {
+  position: relative;      /* Để các phần tử con (img) định vị tương đối theo button */
+  
+  width: 30px;             /* Kích thước button có thể điều chỉnh */
+  height: 30px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;        /* Ẩn những phần có thể vượt ra ngoài */
+}
+
+/* Ảnh bên trong button, luôn tràn viền theo button */
+.custom-btn img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;             /* Ảnh chiếm toàn bộ chiều rộng của button */
+  height: 100%;            /* Ảnh chiếm toàn bộ chiều cao của button */
+  object-fit: cover;       /* Giữ tỷ lệ và bao phủ toàn bộ button */
+  display: block;
+  border-radius: 20%;      /* Bo tròn góc của ảnh, có thể điều chỉnh */
 }
 
 /* Animations */
@@ -410,4 +560,24 @@ nav.account-nav button:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-image-source: linear-gradient(45deg, #3498db, #9b59b6);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #9b59b6, #3498db);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #3498db, #9b59b6);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }

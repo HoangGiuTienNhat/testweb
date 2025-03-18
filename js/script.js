@@ -3,7 +3,7 @@
    - Sản phẩm mặc định: 50 sản phẩm, 30 sản phẩm/trang.
 */
 
-const productsPerPage = 30;
+const productsPerPage = 12;
 let currentPage = 1;
 let totalPages = 0;
 
