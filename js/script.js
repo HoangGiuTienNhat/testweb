@@ -135,6 +135,9 @@ function openProductDetail(productId) {
 }
 
 function addToWishlist(productName, productId) {
+  let productImg = document.querySelector(`#${productId} .product-image`);
+  let imgSrc = productImg ? productImg.src : "defaultImage.jpg";
+
   let wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
   if (!wishlist.some(item => item.id === productId)) {
     wishlist.push({
